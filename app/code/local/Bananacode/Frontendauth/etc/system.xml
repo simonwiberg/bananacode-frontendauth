@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<config>
+	<tabs>
+        <bananasettings translate="label" module="frontendauth">
+            <label>Banana Code</label>
+            <sort_order>1000000</sort_order>
+        </bananasettings>
+    </tabs>
+	<sections>
+		<frontendauth translate="label" module="frontendauth">
+			<label>Banana Code Frontend Access Control</label>
+            <tab>bananasettings</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>5000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label">
+                	<label>Frontend Access Control Settings</label>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <expanded>yes</expanded>              	
+                    <fields>
+                    	<enabled>
+                    		<label>Enable Frontend Access Control</label>
+                    		<frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                    		<sort_order>1</sort_order>
+		                    <show_in_default>1</show_in_default>
+		                    <show_in_website>1</show_in_website>
+		                    <show_in_store>1</show_in_store>
+		                    <comment></comment>	
+                    	</enabled>
+                    	<adminlogin>
+                    		<label>Enable Grant Access to Admin Users</label>
+                    		<frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                    		<sort_order>5</sort_order>
+		                    <show_in_default>1</show_in_default>
+		                    <show_in_website>1</show_in_website>
+		                    <show_in_store>1</show_in_store>
+		                    <comment>If this feature is enabled logged in admin users will be allowed access to frontend independently of white- and blacklists</comment>	
+                    	</adminlogin>
+                        <enableblacklist translate="label">
+                        	<label>Enable Blacklist</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                    		<sort_order>10</sort_order>
+		                    <show_in_default>1</show_in_default>
+		                    <show_in_website>1</show_in_website>
+		                    <show_in_store>1</show_in_store>
+                            <comment></comment>
+                        </enableblacklist>
+                        <blacklist translate="label">
+                            <label>Blacklisted Hosts</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>12</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Enter comma separated list of hosts without any whitespaces</comment>
+                        </blacklist>
+                        <enablewhitelist translate="label">
+                        	<label>Enable Whitelist</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                    		<sort_order>20</sort_order>
+		                    <show_in_default>1</show_in_default>
+		                    <show_in_website>1</show_in_website>
+		                    <show_in_store>1</show_in_store>
+                            <comment></comment>
+                        </enablewhitelist>
+                        <whitelist translate="label">
+                            <label>Whitelisted Hosts</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>23</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Enter comma separated list of hosts without any whitespaces</comment>
+                        </whitelist>
+                        <remotehost translate="label">
+                        	<label>Method to Get Remote Host</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>frontendauth/options_hostvariable</source_model>
+                    		<sort_order>30</sort_order>
+		                    <show_in_default>1</show_in_default>
+		                    <show_in_website>1</show_in_website>
+		                    <show_in_store>1</show_in_store>
+                            <comment>In the standard case Mage::helper('core/http')->getRemoteAddr() should be used. Sometimes due to server setup that 
+                            	will not give the user ip. Be aware that the other variables may be spoofed.</comment>                            
+                        </remotehost>                        
+                        <debuglog translate="label">
+                        	<label>Enable Debuglog</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                    		<sort_order>55</sort_order>
+		                    <show_in_default>1</show_in_default>
+		                    <show_in_website>1</show_in_website>
+		                    <show_in_store>1</show_in_store>
+                            <comment>Enable output of debugging information to frontendauth.log</comment>
+                        </debuglog>
+                    </fields>
+                </general>
+                <hostinfo>
+                	<label>Host Variables Output</label>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <expanded>yes</expanded>
+                    <fields>
+                    	<info>		            		
+		            		<label>Your host info</label>
+		            		<frontend_type>text</frontend_type>		            		
+		            		<frontend_model>frontendauth/adminhtml_configinfo</frontend_model> 		
+		            		<sort_order>40</sort_order>
+		            		<show_in_default>1</show_in_default>
+		                    <show_in_website>1</show_in_website>
+		                    <show_in_store>1</show_in_store>
+		                    <comment></comment>             
+		            	</info>   
+                    </fields>
+                </hostinfo>
+           </groups>
+       </frontendauth>
+	</sections>
+</config>

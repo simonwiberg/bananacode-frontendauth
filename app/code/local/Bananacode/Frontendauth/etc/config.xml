@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Bananacode_Frontendauth>
+            <version>0.1.0</version>
+        </Bananacode_Frontendauth>
+    </modules>
+    <global>
+        <models>
+            <frontendauth>
+                <class>Bananacode_Frontendauth_Model</class>
+            </frontendauth>
+        </models>
+        <blocks>
+        	<frontendauth>
+                <class>Bananacode_Frontendauth_Block</class>
+            </frontendauth>      
+        </blocks>
+        <helpers>
+        	<frontendauth>
+                <class>Bananacode_Frontendauth_Helper</class>
+            </frontendauth>  
+        </helpers>
+        <events>
+         <controller_front_init_before>
+            <observers>
+               <frontendauth>
+                  <type>singleton</type>
+                  <class>Bananacode_Frontendauth_Model_Observer</class>
+                  <method>checkAccess</method>
+               </frontendauth>
+            </observers>
+         </controller_front_init_before>
+      </events>
+    </global>
+    <adminhtml>
+		<acl>
+		    <resources>
+				<admin>
+				    <children>
+						<system>
+						    <children>
+								<config>
+								    <children>
+										<frontendauth>
+										    <title>Frontendauth Settings</title>
+										</frontendauth>
+								    </children>
+								</config>
+						    </children>
+						</system>
+				    </children>
+				</admin>
+		    </resources>
+		</acl>
+	</adminhtml>
+</config>

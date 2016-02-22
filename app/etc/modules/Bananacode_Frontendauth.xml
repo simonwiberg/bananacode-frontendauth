@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Bananacode_Frontendauth>
+            <active>true</active>
+            <codePool>local</codePool>            
+        </Bananacode_Frontendauth>
+    </modules>
+</config>

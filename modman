@@ -1,0 +1,3 @@
+app/design/adminhtml/default/default/template/bananacode/frontendauth  app/design/adminhtml/default/default/template/bananacode/frontendauth
+app/code/local/Bananacode/Frontendauth  app/code/local/Bananacode/Frontendauth
+app/etc/modules/Bananacode_Frontendauth.xml  app/etc/modules/Bananacode_Frontendauth.xml
